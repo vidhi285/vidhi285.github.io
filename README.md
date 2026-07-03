@@ -13,7 +13,7 @@ https://vidhi285.github.io
 - JavaScript
 - Responsive Design
 - Glassmorphism UI
-- GitHub Pages
+- GitHub Page
 
 ## 📫 Connect with Me
 
