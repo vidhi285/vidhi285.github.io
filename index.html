@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vidhi Shah — AI &amp; Software Engineer Portfolio</title>
+<meta name="description" content="Vidhi Shah — Computer Science Engineering student specializing in AI, Machine Learning, Cloud Computing and Software Development. Explore projects, skills and certifications." />
+<meta name="keywords" content="Vidhi Shah, AI Engineer, Machine Learning, Software Developer, Portfolio, CNN, Sentiment Analysis, AWS" />
+<meta name="author" content="Vidhi Shah" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Vidhi Shah — AI & Software Engineer Portfolio" />
+<meta property="og:description" content="Final-year CSE student building real-world AI, ML and software solutions." />
+<meta property="og:type" content="website" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Vidhi Shah — AI & Software Engineer Portfolio" />
+<meta name="twitter:description" content="Final-year CSE student building real-world AI, ML and software solutions." />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%236C63FF%22>V</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<!-- <canvas id="globalParticles" aria-hidden="true"></canvas> -->
+<body>
+<canvas id="globalParticles" aria-hidden="true"></canvas>
+<!-- ===== LOADING SCREEN ===== -->
+<div id="loader" role="status" aria-label="Loading portfolio">
+  <canvas id="loaderCanvas"></canvas>
+
+  <div class="loader-center">
+    <div class="loader-name" id="loaderName" aria-label="Vidhi Shah"></div>
+    <p class="loader-subtitle" id="loaderSubtitle">AI ENGINEER &nbsp;•&nbsp; SOFTWARE DEVELOPER &nbsp;•&nbsp; CLOUD ENTHUSIAST</p>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar-fill" id="loaderBarFill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CUSTOM CURSOR ===== -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ===== SCROLL PROGRESS ===== -->
+<div class="scroll-progress" aria-hidden="true"><div id="scrollProgressFill"></div></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <nav class="nav-container" aria-label="Primary navigation">
+    <a href="#home" class="nav-logo" style="font-family: 'Allura', cursive; font-size: 23px; font-weight: 200; color: #FFFFFF; line-height: 1; letter-spacing: 1px;">VS</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active-link">Home</a></li>
+      <!-- <li><a href="#about" class="nav-link">About</a></li> -->
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#certifications" class="nav-link">Certifications</a></li>
+      <li><a href="#resume" class="nav-link">Resume</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-link">Home</a>
+    <!-- <a href="#about" class="mobile-link">About</a> -->
+    <a href="#education" class="mobile-link">Education</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#certifications" class="mobile-link">Certifications</a>
+    <a href="#resume" class="mobile-link">Resume</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section id="home" class="hero">
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+  <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-text" data-reveal>
+      <p class="eyebrow"><span class="eyebrow-dot"></span>Available for Internships &amp; Collaborations</p>
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">Vidhi Shah</span>
+      </h1>
+      <h2 class="hero-typing">
+        <span id="typingText"></span><span class="cursor-blink">|</span>
+      </h2>
+      <p class="hero-desc">
+        My journey into technology began at <strong>Phoenix School, Vadodara</strong>, where a curiosity for how things work led me toward computers and logical thinking. That curiosity turned into a career path when I joined <strong>Navrachana University</strong> to pursue a B.Tech in Computer Science &amp; Engineering - a decision that reshaped how I see the world.
+      </p>
+      <!-- <p class="hero-desc">
+        Over the past three years, that foundation has grown into real, hands-on experience. I've trained deep learning models from scratch, deployed AI systems on the cloud, built Android applications, and shipped full-stack web platforms — all while learning that the most interesting problems live at the intersection of multiple disciplines.
+      </p> -->
+      <p class="hero-desc">
+        I believe good software is built by people who are as thoughtful as they are technical. Outside of code, I recharge through travel and music - two things that keep me creative, grounded and endlessly curious about the world I'm building software for.
+      </p>
+      <!-- <div class="hero-actions">
+        <a href="assets/resume/Vidhi_Shah_Resume.pdf" download="Vidhi_Shah_Resume.pdf" onclick="forceDownload(event, 'assets/resume/Vidhi_Shah_Resume.pdf', 'Vidhi_Shah_Resume.pdf')" class="btn btn-primary">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <i class="fa-regular fa-paper-plane"></i> Contact Me
+        </a>
+      </div> -->
+      <div class="hero-socials">
+        <a href="https://github.com/vidhi285" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/vidhi-shah-b98724289/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:vidhishah2856@gmail.com" aria-label="Email" class="social-icon"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap" data-reveal>
+      <div class="photo-card tilt-card">
+        <div class="photo-glow"></div>
+        <img src="assets/images/profile.png" alt="Vidhi Shah" class="hero-photo" onerror="this.onerror=null;this.src='assets/images/profile-placeholder.svg';" />
+        <div class="photo-ring"></div>
+      </div>
+      <div class="float-chip chip-1"><i class="fa-solid fa-brain"></i> AI / ML</div>
+      <div class="float-chip chip-2"><i class="fa-brands fa-aws"></i> Cloud</div>
+      <div class="float-chip chip-3"><i class="fa-solid fa-code"></i> Full-Stack</div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-down" aria-label="Scroll to about section">
+    <span></span>
+  </a>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<!-- <section id="about" class="section about">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>About Me</p>
+    <h2 class="section-title" data-reveal>Building with curiosity, shipping with intent.</h2> -->
+
+    <!-- <div class="about-grid">
+      <div class="about-copy" data-reveal>
+        <p>
+          My journey into technology began at <strong>Phoenix School, Vadodara</strong>, where a curiosity for
+          how things work led me toward computers and logical thinking. That curiosity turned into a career path
+          when I joined <strong>Navrachana University</strong> to pursue a B.Tech in Computer Science &amp;
+          Engineering — a decision that reshaped how I see the world.
+        </p>
+        <p>
+          Over the past three years, that foundation has grown into real, hands-on experience. I've trained deep
+          learning models from scratch, deployed AI systems on the cloud, built Android applications, and shipped
+          full-stack web platforms — all while learning that the most interesting problems live at the intersection
+          of multiple disciplines.
+        </p>
+        <p>
+          I believe good software is built by people who are as thoughtful as they are technical. Outside of code,
+          I recharge through travel and music — two things that keep me creative, grounded and endlessly curious
+          about the world I'm building software for.
+        </p>
+      </div>
+
+      <div class="about-cards">
+        <div class="info-card tilt-card" data-reveal>
+          <i class="fa-solid fa-lightbulb"></i>
+          <h3>Problem Solver</h3>
+          <p>I break complex challenges into clear, logical steps and enjoy finding elegant solutions under real constraints.</p>
+        </div>
+        <div class="info-card tilt-card" data-reveal>
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Fast Learner</h3>
+          <p>From MIT App Inventor to AWS EC2 to OpenGL - I pick up new tools quickly and apply them to working projects.</p>
+        </div>
+        <div class="info-card tilt-card" data-reveal>
+          <i class="fa-solid fa-users"></i>
+          <h3>Team Player</h3>
+          <p>Most of my projects were built in teams of 2–4. I value clear communication, shared ownership and mutual support.</p>
+        </div>
+        <div class="info-card tilt-card" data-reveal>
+          <i class="fa-solid fa-palette"></i>
+          <h3>Creative Thinker</h3>
+          <p>I approach both UI design and system architecture with the same creative mindset — form and function together.</p>
+        </div>
+      </div>
+    </div> -->
+  <!-- </div>
+</section> -->
+
+<!-- ===== EDUCATION ===== -->
+<section id="education" class="section education">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Education</p>
+    <h2 class="section-title" data-reveal>Academic Timeline</h2>
+
+    <div class="timeline">
+      <div class="timeline-line" aria-hidden="true"></div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card tilt-card">
+          <span class="timeline-year">2023 — 2027</span>
+          <h3>B.Tech. Computer Science &amp; Engineering</h3>
+          <p class="timeline-org">Navrachana University, Vadodara</p>
+          <p class="timeline-grade"><i class="fa-solid fa-star"></i> CGPA: 8.27 / 10</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card tilt-card">
+          <span class="timeline-year">2023</span>
+          <h3>12th Grade — GSEB</h3>
+          <p class="timeline-org">Phoenix School, Vadodara</p>
+          <p class="timeline-grade"><i class="fa-solid fa-star"></i> Percentage: 56.61 / 100</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card tilt-card">
+          <span class="timeline-year">2021</span>
+          <h3>10th Grade — GSEB</h3>
+          <p class="timeline-org">Phoenix School, Vadodara</p>
+          <p class="timeline-grade"><i class="fa-solid fa-star"></i> Percentage: 91.50 / 100</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section skills">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Skills</p>
+    <h2 class="section-title" data-reveal>Tools of the Trade</h2>
+
+    <div class="soft-skills-row">
+        <div class="soft-skill-card" data-reveal>
+          <i class="fa-solid fa-lightbulb"></i>
+          <h3>Problem Solver</h3>
+          <p>I break complex challenges into clear logical steps and find elegant solutions under real constraints.</p>
+        </div>
+        <div class="soft-skill-card" data-reveal>
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Fast Learner</h3>
+          <p>From MIT App Inventor to AWS EC2 to OpenGL — I pick up new tools quickly and ship working projects.</p>
+        </div>
+        <div class="soft-skill-card" data-reveal>
+          <i class="fa-solid fa-users"></i>
+          <h3>Team Player</h3>
+          <p>Most projects built in teams of 2–4. I value clear communication, shared ownership and mutual respect.</p>
+        </div>
+        <div class="soft-skill-card" data-reveal>
+          <i class="fa-solid fa-palette"></i><h3>Creative Thinker</h3>
+          <p>I bring the same creative mindset to UI design and system architecture — form and function together.</p>
+        </div>
+      </div>
+
+    <div class="skills-grid" id="skillsGrid">
+      <!-- Populated by script.js from SKILLS_DATA -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="section projects">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Featured Work</p>
+    <h2 class="section-title" data-reveal>Projects</h2>
+    <p class="section-sub" data-reveal>A selection of AI, ML, web and mobile projects built through coursework, mentorship and self-driven curiosity.</p>
+
+    <div class="projects-toolbar" data-reveal>
+      <div class="project-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="projectSearch" placeholder="Search projects, e.g. CNN, Flask, Android..." aria-label="Search projects" />
+      </div>
+      <div class="project-filters" id="projectFilters" role="tablist" aria-label="Filter projects by category">
+        <!-- Populated by script.js -->
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Populated by script.js from PROJECTS_DATA -->
+    </div>
+
+    <p class="no-results" id="noResults" hidden>No projects match your search. Try a different keyword.</p>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications" class="section certifications">
+  <div class="container">
+    <p class="section-eyebrow" data-reveal>Certifications</p>
+    <h2 class="section-title" data-reveal>Verified Knowledge</h2>
+    <p class="section-sub" data-reveal>Industry-recognized certifications from AWS Academy and Google for Developers, plus foundational computer training.</p>
+
+    <div class="certs-grid" id="certsGrid">
+      <!-- Populated by script.js from CERTS_DATA -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS / COUNTERS =====
+<section class="section counters">
+  <div class="container counters-grid">
+    <div class="counter-card" data-reveal>
+      <span class="counter-num" data-target="11">0</span>
+      <p>Projects Completed</p>
+    </div>
+    <div class="counter-card" data-reveal>
+      <span class="counter-num" data-target="5">0</span>
+      <p>Certifications</p>
+    </div>
+    <div class="counter-card" data-reveal>
+      <span class="counter-num" data-target="20">0</span>
+      <p>Technologies</p>
+    </div>
+    <div class="counter-card" data-reveal>
+      <span class="counter-num" data-target="6">0</span>
+      <p>GitHub Repositories</p>
+    </div>
+    <div class="counter-card" data-reveal>
+      <span class="counter-num" data-target="3">0</span>
+      <p>Years Learning</p>
+    </div>
+  </div>
+</section> -->
+
+<!-- ===== RESUME ===== -->
+<section id="resume" class="section resume">
+  <div class="container">
+    <div class="resume-card tilt-card" data-reveal>
+      <div class="resume-icon"><i class="fa-regular fa-file-lines"></i></div>
+      <div class="resume-info">
+        <h2>My Resume</h2>
+        <p>Get the full picture - education, projects, certifications and contact details in one PDF.</p>
+      </div>
+      <div class="resume-actions">
+        <a href="assets/resume/Vidhi_Shah_Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fa-regular fa-eye"></i> Preview
+        </a>
+        <a href="assets/resume/Vidhi_Shah_Resume.pdf" download="Vidhi_Shah_Resume.pdf" onclick="forceDownload(event, 'assets/resume/Vidhi_Shah_Resume.pdf', 'Vidhi_Shah_Resume.pdf')" class="btn btn-primary">
+          <i class="fa-solid fa-download"></i> Download
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section contact">
+  <div class="container contact-grid">
+    <div class="contact-info" data-reveal>
+      <p class="section-eyebrow">Get In Touch</p>
+      <h2 class="section-title">Let's build something great.</h2>
+      <p class="section-sub">
+        Open to internships, collaborative projects and entry-level software / AI roles.
+      </p>
+
+      <ul class="contact-list">
+        <li>
+          <i class="fa-regular fa-envelope"></i>
+          <a href="mailto:vidhishah2856@gmail.com">vidhishah2856@gmail.com</a>
+        </li>
+        <!-- <li>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+918320907714">+91 83209 07714</a>
+        </li> -->
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Vadodara, Gujarat, India</span>
+        </li>
+      </ul>
+
+      <div class="contact-socials">
+        <a href="https://github.com/vidhi285" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/vidhi-shah-b98724289/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:vidhishah2856@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+        <!-- <a href="tel:+918320907714" class="social-icon" aria-label="Phone"><i class="fa-solid fa-phone"></i></a> -->
+      </div>
+    </div>
+
+    <form class="contact-form glass-card" id="contactForm" data-reveal novalidate>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or opportunity..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit">
+        <i class="fa-regular fa-paper-plane"></i> Send Message
+      </button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<!-- ===== FOOTER ===== -->
+
+<!--
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <div class="footer-links">
+      <h4>Navigate</h4>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-meta">
+      <h4>Status</h4>
+      <p id="liveClock">--:--:--</p>
+      <p id="liveDate">—</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="footerYear"></span> Vidhi Shah.</p>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </div>
+</footer>
+-->
+
+<footer class="footer">
+    <div class="container footer-bottom">
+
+        <div class="footer-left">
+            <p>&copy; <span id="footerYear"></span> Vidhi Shah</p>
+        </div>
+
+        <div class="footer-center" style="margin-left: 500px;">
+            <span id="liveClock">--:--:--</span>
+            <span class="footer-divider">•</span>
+            <span id="liveDate">Loading...</span>
+        </div>
+
+        <div class="footer-right">
+            <button id="backToTop" class="back-to-top" aria-label="Back to top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
