@@ -14,7 +14,7 @@ const SKILLS_DATA = [
     skills: [
       { name: "Python", level: 80 },
     //   { name: "Java", level: 20 },
-      { name: "C", level: 40 },
+      { name: "C", level: 35 },
       { name: "JavaScript", level: 70 }
     ]
   },
@@ -22,9 +22,9 @@ const SKILLS_DATA = [
     category: "AI & Machine Learning",
     icon: "fa-solid fa-brain",
     skills: [
-      { name: "Deep Learning", level: 60 },
+      { name: "Machine Learning", level: 70 },
       { name: "Computer Vision (CNN)", level: 60 },
-      { name: "NLP", level: 70 },
+      { name: "NLP", level: 50 },
       { name: "Model Training & Data Processing", level: 90 }
     ]
   },
@@ -50,7 +50,7 @@ const SKILLS_DATA = [
     category: "Frontend",
     icon: "fa-solid fa-display",
     skills: [
-      { name: "HTML / CSS", level: 90 },
+      { name: "HTML", level: 90 },
       { name: "CSS", level: 65 },
       { name: "Responsive UI/UX Design", level: 85 }
     ]
@@ -760,16 +760,14 @@ const TYPING_ROLES = [
   draw();
 })();
 
-/* ============ HERO: MOUSE PARALLAX GLOW ============ */
+/* ============ GLOBAL MOUSE GLOW ============ */
 (function initMouseGlow() {
   const glow = document.getElementById("mouseGlow");
-  const hero = document.querySelector(".hero");
-  if (!glow || !hero) return;
+  if (!glow) return;
 
-  hero.addEventListener("mousemove", (e) => {
-    const rect = hero.getBoundingClientRect();
-    glow.style.left = (e.clientX - rect.left) + "px";
-    glow.style.top = (e.clientY - rect.top) + "px";
+  document.addEventListener("mousemove", (e) => {
+    glow.style.left = e.clientX + "px";
+    glow.style.top  = e.clientY + "px";
   });
 })();
 

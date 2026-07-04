@@ -30,6 +30,7 @@
 </head>
 <!-- <canvas id="globalParticles" aria-hidden="true"></canvas> -->
 <body>
+<div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
 <canvas id="globalParticles" aria-hidden="true"></canvas>
 <!-- ===== LOADING SCREEN ===== -->
 <div id="loader" role="status" aria-label="Loading portfolio">
@@ -94,7 +95,7 @@
   <div class="blob blob-1" aria-hidden="true"></div>
   <div class="blob blob-2" aria-hidden="true"></div>
   <div class="blob blob-3" aria-hidden="true"></div>
-  <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
+  <!-- <div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div> -->
 
   <div class="container hero-grid">
     <div class="hero-text" data-reveal>
@@ -417,7 +418,6 @@
 </main>
 
 <!-- ===== FOOTER ===== -->
-<!-- ===== FOOTER ===== -->
 
 <!--
 <footer class="footer">
@@ -463,7 +463,7 @@
         </div>
 
         <div class="footer-right">
-            <button id="backToTop" class="back-to-top" aria-label="Back to top">
+                <button id="backToTop" class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
                 <i class="fa-solid fa-arrow-up"></i>
             </button>
         </div>
